@@ -1,0 +1,22 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/tcsenpai/swingmusic-desktop.git",
+  "keywords": [
+    "swingmusic",
+    "electron",
+    "desktop",
+    "gui",
+    "audio"
+  ],
+  "author": "TheCookingSenpai",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^28.2.0"
+  }
+}
