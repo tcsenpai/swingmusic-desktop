@@ -4,16 +4,20 @@ const path = require('node:path')
 
 let factor = null
 
+
 function createWindow () {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 1280 / factor,
     height: 1024 / factor,
     webPreferences: {
-      zoomFactor: 1.0 / factor
+      zoomFactor: 1.0 / factor,
+      nodeIntegration: true,
     }
   })
 
+  // Testing some env variables
+  mainWindow.setMenuBarVisibility(false)
   mainWindow.loadURL("http://localhost:1970")
 
 }
