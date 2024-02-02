@@ -18,7 +18,7 @@ function createWindow () {
 
   // Testing some env variables
   mainWindow.setMenuBarVisibility(false)
-  mainWindow.loadURL("http://localhost:1970")
+  mainWindow.loadURL("http://localhost:1970", {userAgent: 'swingmusic-desktop'})
 
 }
 
