@@ -1,10 +1,11 @@
 {
-  "name": "electron-quick-start",
+  "name": "swingmusic-desktop",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Let there be music",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder build"
   },
   "repository": "https://github.com/tcsenpai/swingmusic-desktop.git",
   "keywords": [
@@ -16,8 +17,74 @@
   ],
   "author": "TheCookingSenpai",
   "license": "CC0-1.0",
+  "build": {
+    "appId": "com.swingmusic.swingmusic-desktop",
+    "mac": {
+      "target": "zip",
+      "category": "io.music.swingmusic"
+    },
+    "win": {
+      "target": "portable"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Music",
+      "description": "Let there be music",
+      "desktop": {
+        "Name": "SwingMusicDesktop",
+        "Comment": "Let there be music",
+        "executableName": "swingmusic-desktop",
+        "Icon": "build/icons/icon.png"
+      }
+    },
+    "directories": {
+      "output": "dist/",
+      "buildResources": "assets/"
+    },
+    "files": [
+      "dist/main/**/*",
+      "node_modules/**/*",
+      "main.js",
+      "libs/**/*",
+      ".env",
+      "package.json",
+      "assets/**/*",
+      "swingmusic_bin/**/*"
+    ],
+    "extraFiles": [
+      {
+        "from": "swingmusic_bin/swingmusic",
+        "to": "swingmusic_bin/swingmusic",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": ".env",
+        "to": ".env",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "assets",
+        "to": "assets",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "swingmusic_bin/swingmusic.exe",
+        "to": "swingmusic_bin/swingmusic.exe",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  },
   "devDependencies": {
-    "electron": "^28.2.0"
+    "electron": "^28.2.0",
+    "electron-builder": "^24.9.1"
   },
   "dependencies": {
     "dotenv": "^16.4.1"
